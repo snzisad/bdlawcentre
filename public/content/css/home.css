@@ -1,0 +1,429 @@
+@charset "utf-8";
+/* CSS Document */
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:300,400,500,700,900');
+
+.diamond_shape{
+	height: 150px;
+	width: 150px;
+	background-color: #000;
+	margin: auto;
+	transform: rotate(-46deg);
+	opacity: 0.5;
+	background-repeat: no-
+    margin-top: 5px;
+    display: block!important;
+    display: -webkit-box!important;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-weight: 600;
+    color: #29303b;
+    text-overflow: ellipsis;
+    height: 48px;
+    min-height: 30px;
+    font-size: 12px;repeat;
+    background-position: center; 
+    top: 31px;
+}
+
+#get-in-touch .feature{
+    cursor: pointer;
+}
+
+.diamond_shape_text{
+	width: 80px;
+	/*height: 100%;*/
+	color: #000;
+	font-size: 21px;
+	margin: auto;
+	/*top: -75px;*/
+    transform: rotate(-45deg);
+    align-content: center;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.8);
+}
+
+.service_col_1{
+	height: 300px;
+	width: 220px;
+	background-color: #ccc;
+}
+
+.service_col_1 img{
+	height: 100%;
+    /*height: 300px;*/
+	width: 100%;
+
+	border: none;
+    bottom: 0;
+}
+
+.service_col_1 .title_bg{
+	background-color: #024EFE;
+	opacity: 0.5;
+    top: -300px;
+	height: 300px;
+}
+
+.service_col_1 .feature_title{
+	/*position: relative;*/
+    color: #fff;
+    font-size: 20px;
+    height: 85px;
+    bottom: 0px;
+
+    font-weight: 800; 
+    bottom: 470px;
+    padding: 5px;
+    overflow: visible;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.8);
+}
+
+
+
+.service_col_1 .feature_title:after{
+    content: "";
+    height: 5px;
+    width: 100%;
+    background: #ed1c24;
+    position: absolute;
+    left: 0px;
+    bottom: -8px;
+}
+
+.service_col_1 .feature_description{
+    width: 100%;
+    position: absolute;
+    color: #fff;
+    padding: 5px;
+    top: 235px;
+    line-height: 17px;
+
+    display: block!important;
+    display: -webkit-box!important;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 40px;
+    /*min-height: 30px;*/
+}
+
+.service_col_1 .more_button{
+    width: 100px;
+    margin: 50px;
+    position: absolute;
+    padding: 10px;
+    color: #fff;
+    border: 2px solid #fff;   
+    bottom: -30px;
+    font-weight: bolder;
+    opacity: 0;
+    -webkit-transition: all 400ms ease;
+    -moz-transition: all 400ms ease;
+    -ms-transition: all 400ms ease;
+    -o-transition: all 400ms ease;
+    transition: all 400ms ease;
+}
+
+.service_col_1 a:hover > .title_bg{
+    background-color: #B80247;
+    opacity: 0.8;
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+
+.service_col_1 a:hover > .more_button{
+    z-index: 1;
+    opacity: 1;
+    -webkit-transition: all 1000ms ease;
+    -moz-transition: all 1000ms ease;
+    -ms-transition: all 1000ms ease;
+    -o-transition: all 1000ms ease;
+    transition: all 1000ms ease;
+}
+
+.service_col_1 a:hover > .feature_title{
+    bottom: 520px;
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+
+.service_col_1 a:hover > .feature_description{
+    top: 180px;
+    -webkit-transition: all 500ms ease;
+    -moz-transition: all 500ms ease;
+    -ms-transition: all 500ms ease;
+    -o-transition: all 500ms ease;
+    transition: all 500ms ease;
+}
+.our-team{
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.team-mate img{
+    width: 180px;
+    height: 180px;
+    border-radius: 100px;
+}
+
+.team-mate .name{
+    font-size: 20px;
+    margin-top: 10px;
+    color: #000;   
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.8); 
+}
+
+.section_title{
+    width: 100%;
+    padding: 10px;
+    border-bottom: 3px solid #efefef;
+}
+
+.service-row{
+    /*font-size: 16px;*/
+}
+
+.service-row a{
+    color: #000;
+    margin-left: 5px;
+}
+
+.service-row div{
+    padding: 5px;
+}
+
+.carousel-text{
+    position: absolute;
+    z-index: 10;
+    top: 60px;
+    left: 100px;
+    width: 500px;
+}
+
+.carousel-text .title{
+    font-size: 50px;
+    color: #fff;
+    font-weight: 500;
+    line-height: 60px;
+}
+
+.carousel-text .description{
+    margin-top: 30px;
+    font-size: 15px;
+    color: #fff;
+    font-weight: 600;
+    line-height: 20px;
+
+    display: block!important;
+    display: -webkit-box!important;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 60px;
+    min-height: 30px;
+}
+
+.carousel-text .button{
+    width: 120px;
+    margin-top: 40px;
+    font-size: 16px;
+    color: #fff;
+    cursor: pointer;
+    padding: 5px;
+    padding-left: 15px;
+    font-weight: 700;
+    border: 2px solid #fff;
+}
+
+.get_touch{
+    margin-top: 80px;
+    width: 350px;
+    transform: rotate(-45deg);
+    margin-bottom: 50px;
+    cursor: pointer;
+}
+
+.get_touch .shape{
+    width: 150px;
+    height: 150px;
+    margin: 8px;
+    text-align: center;
+    color: #000;
+    background-repeat: no-repeat;
+    background-position: center; 
+    position: relative;
+    opacity: 0.5;
+
+}
+
+.get_touch h1{
+    /*width: 80px;*/
+    /*height: 100%;*/
+    position: absolute;
+    font-size: 21px;
+    margin: auto;
+    color: #000;
+    top: 0px;
+    padding-left: 45px;
+    padding-top: 40px;
+    text-align: center;
+    /*top: -75px;*/
+    transform: rotate(45deg);
+    align-content: center;
+    text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.8);
+
+}
+
+.training_list{
+    /*background: #efefef;*/
+    width: 300px;
+    /*padding: 5px;*/
+    border: 3px solid #efefef;
+    border-radius: 10px;
+    margin: 20px;
+    cursor: pointer;
+    box-shadow: 0px 1px 10px rgba(29,34,47,0.1);
+}
+
+.training_list:hover{
+    box-shadow: 10px 10px 40px rgba(29,34,47,0.1);
+}
+
+.training_list img{
+    max-width: 100%;
+    width: 100%;
+    height: 150px;
+    border-radius: 10px 10px 0px 0px;
+
+}
+
+.training_list .training_title{
+    margin: 10px;
+    font-size: 18px;
+    /*color: #000;*/
+}
+
+.training_list .training_author{
+    margin: 15px;
+    font-size: 15px;
+    font-weight: 700;
+    /*color: #000;*/
+}
+
+.training_list .training_description{
+    margin: 10px;
+    font-size: 13px;
+    line-height: 20px;
+
+
+    margin-top: 5px;
+    display: block!important;
+    display: -webkit-box!important;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    height: 60px;
+    min-height: 30px;
+}
+
+.training_list .training_description span{
+    color: #047AFF;
+}
+
+.client{
+    background: #fff;
+    width: 100%;
+    /*height: 80px;*/
+    text-align: center;
+    padding: 5px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 3px 10px rgba(29,34,47,0.1);
+}
+
+.client img{
+    max-width: 100%;
+    height: 60px;
+    width: auto;
+    vertical-align: middle;
+
+
+    /*max-height: 100%;*/
+    /*width: 100px;*/
+    /*margin: auto;*/
+}
+
+.feedback{
+    background: #fff;
+    width: 100%;
+    /*height: 80px;*/
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 3px 10px rgba(29,34,47,0.1);
+}
+
+.feedback .feedback-text{
+    font-size: 15px;
+    font-style: italic;
+    color: #59584e;
+    line-height: 20px;
+}
+
+.feedback .feedback-user{
+    font-size: 14px;
+    color: #1d1949;
+    font-weight: bold;
+    line-height: 20px;
+}
+
+.membership{
+    background: #fff;
+    width: 100%;
+    border-radius: 50px;
+    text-align: center;
+    padding: 15px;
+    margin: 15px;
+    border: 1px solid #ddd;
+    box-shadow: 0px 3px 10px rgba(29,34,47,0.1);
+}
+
+.membership img{
+    max-height: 100%;
+    max-width: 100%;
+    vertical-align: middle;
+    /*border-radius: 50px;*/
+}
+
+.shape2{
+    height: 60px;
+    width: 60px;
+    margin: 5px;
+    /*margin-left: 10px;*/
+    background: #000;
+}
+
+.get_touch2{
+    margin-top: 10px;
+    /*background: #efefef;*/
+    height: 150px;
+    width: 150px;
+    text-align: center;
+    padding: 5px;
+    vertical-align: middle;
+    /*transform: rotate(45deg);*/
+}
+
+.shape_text{
+    vertical-align: middle;
+    /*transform: rotate(-45deg);*/
+}
