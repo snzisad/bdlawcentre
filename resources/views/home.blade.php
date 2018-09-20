@@ -50,31 +50,6 @@
 		@endif
 	</div>
 
-	<div class="get_touch2">
-		<div class="row">
-			<div class="col-lg-4 shape2">
-				<div class="shape_text">
-					Hello
-				</div>
-			</div>
-			<div class="col-lg-4 shape2">
-				<div class="shape_text">
-					Hello
-				</div>
-			</div>
-			<div class="col-lg-4 shape2">
-				<div class="shape_text">
-					Hello
-				</div>
-			</div>
-			<div class="col-lg-4 shape2">
-				<div class="shape_text">
-					Hello
-				</div>
-			</div>
-		</div>
-	</div>
-
 
 	<div class="features" id="trainings" style="margin-top: 10px;">
 		<div class="container">

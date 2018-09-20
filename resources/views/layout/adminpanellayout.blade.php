@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href='{{asset("content/images/logo.png")}}'>
+    <link rel="icon" type="image/png" sizes="16x16" href='{{asset("picture/logo/logo.png")}}'>
     <title>@yield('title')</title>
     
     <!-- Bootstrap Core CSS -->
@@ -22,7 +22,10 @@
     <link href='{{asset("content/css/adminpanel.css")}}' rel="stylesheet">
 
     <!-- Font Awesome -->
-    <link href='{{asset("content/css/font-awesome.min.css")}}' rel="stylesheet">
+
+        <link href="{{asset('content/unicat/plugins/font-awesome-4.7.0/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+    <!-- <link href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel="stylesheet"> -->
+    <!-- <link href='{{asset("content/css/font-awesome.min.css")}}' rel="stylesheet"> -->
 
     
 </head>
@@ -102,24 +105,24 @@
                     <ul id="sidebarnav">
                         <li class="nav-devider"></li>
 
-                        <li> <a class="email-compose.html" href="{{asset('/information')}}"><i class="fa fa-tachometer"></i>Information</a>
+                        <li> <a class="email-compose.html" href="{{asset('/information')}}"><i class="fa fa-info-circle"></i>Information</a>
                         </li>
-                        <li> <a class="email-compose.html" href="{{asset('imageslide')}}"><i class="fa fa-institution"></i>Image Slide</a>
+                        <li> <a class="email-compose.html" href="{{asset('imageslide')}}"><i class="fa fa-image"></i>Image Slide</a>
                         </li>
-                        <li> <a class="email-compose.html" href="{{asset('practices')}}"><i class="fa fa-info-circle"></i></i>Practices</a>
-                        <li> <a class="email-compose.html" href="{{asset('trainings')}}"><i class="fa fa-info-circle"></i></i>Training</a>
+                        <li> <a class="email-compose.html" href="{{asset('practices')}}"><i class="fa fa-dashboard"></i></i>Practices</a>
+                        <li> <a class="email-compose.html" href="{{asset('trainings')}}"><i class="fa fa-tv"></i></i>Training</a>
                         </li>
-                        <li> <a class="email-compose.html" href="{{asset('lawers')}}"><i class="fa fa-info-circle"></i></i>Lawers</a>
+                        <li> <a class="email-compose.html" href="{{asset('lawers')}}"><i class="fa fa-user-o"></i></i>Lawers</a>
                         </li>
-                        <li> <a class="email-compose.html" href="{{asset('clients')}}"><i class="fa fa-info-circle"></i></i>Clients</a>
+                        <li> <a class="email-compose.html" href="{{asset('clients')}}"><i class="fa fa-user-circle-o"></i></i>Clients</a>
                         </li>
-                        <li> <a class="email-compose.html" href="{{asset('feedback')}}"><i class="fa fa-info-circle"></i></i>Clients Feedback</a>
+                        <li> <a class="email-compose.html" href="{{asset('feedback')}}"><i class="fa fa-comment-o"></i></i>Clients Feedback</a>
                         </li>
-                        <li> <a class="email-compose.html" href="{{asset('membership')}}"><i class="fa fa-info-circle"></i></i>Membership</a>
+                        <li> <a class="email-compose.html" href="{{asset('membership')}}"><i class="fa fa-certificate"></i></i>Membership</a>
                         </li>
-                        <li> <a class="email-compose.html" href="{{asset('links')}}"><i class="fa fa-info-circle"></i></i>Useful Links</a>
+                        <li> <a class="email-compose.html" href="{{asset('links')}}"><i class="fa fa-chrome"></i></i>Useful Links</a>
                         </li>
-                        <li> <a class="email-compose.html" href="{{asset('paymentmethod')}}"><i class="fa fa-info-circle"></i></i>Payment Method</a>
+                        <li> <a class="email-compose.html" href="{{asset('paymentmethod')}}"><i class="fa fa-paypal"></i></i>Payment Method</a>
                         </li>
                         
                     </ul>

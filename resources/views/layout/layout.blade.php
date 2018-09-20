@@ -4,6 +4,7 @@
 		<title>@yield('title')</title>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="icon" type="image/png" sizes="16x16" href='{{asset("picture/logo/logo.png")}}'>
 
 		<link rel="stylesheet" type="text/css" href="{{asset('content/unicat/styles/bootstrap4/bootstrap.min.css')}}">
 		<link href="{{asset('content/unicat/plugins/font-awesome-4.7.0/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
