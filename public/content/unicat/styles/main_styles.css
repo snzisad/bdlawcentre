@@ -221,7 +221,7 @@ section
 }
 .super_container
 {
-	width: 100%;
+	/*width: 100%;*/
 	overflow: hidden;
 }
 .prlx_parent
@@ -249,6 +249,7 @@ section
 .header
 {
 	position: fixed;
+	background: #fff;
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -384,6 +385,17 @@ section
 	width: 100%;
 	background: #ff9100;
 	padding: 5px;
+}
+
+.header-mobile{
+	position: fixed;
+	top: 0;
+}
+
+.header-mobile.scrolled{
+	background: #fff;
+	top: 0;
+	margin-bottom: 10px;
 }
 
 .header_container marquee{
@@ -863,7 +875,7 @@ section
 	width: 105%;
 	/*height: 100%;*/
 	margin-top: -5px;
-	margin-left: -20px;
+	/*margin-left: -20px;*/
 }
 
 .home img{
@@ -2144,8 +2156,7 @@ section
 .content{
 	width: 100%;
     background: #FFFFFF;
-    padding: 20px;
-    margin-top: 150px;
+    margin-top: 170px;
     margin-bottom: 30px;
 }
 

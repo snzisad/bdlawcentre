@@ -105,6 +105,8 @@
                     <ul id="sidebarnav">
                         <li class="nav-devider"></li>
 
+                        <li> <a class="email-compose.html" href="{{asset('/')}}"><i class="fa fa-home"></i>Home</a>
+
                         <li> <a class="email-compose.html" href="{{asset('/information')}}"><i class="fa fa-info-circle"></i>Information</a>
                         </li>
                         <li> <a class="email-compose.html" href="{{asset('imageslide')}}"><i class="fa fa-image"></i>Image Slide</a>

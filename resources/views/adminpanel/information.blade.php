@@ -18,6 +18,10 @@
 	                <input type="text" class="form-control" name="moto" placeholder="Enter Moto" required autofocus value="{{$info->moto}}">
 	            </div>
 	            <div class="form-group">
+	                <label for="scroll_text">Scroll Text</label><br>
+	                <input type="text" class="form-control" name="scroll_text" placeholder="Enter Scroll Text" required autofocus value="{{$info->scroll_text}}">
+	            </div>
+	            <div class="form-group">
 	                <label for="address">Address</label><br>
 	                <input type="text" class="form-control" name="address" placeholder="Enter Address" required autofocus value="{{$info->address}}">
 	            </div>

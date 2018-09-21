@@ -1,0 +1,125 @@
+
+/*for pc*/
+@media only screen and (min-width: 1265px)
+{
+	.get_touch{
+		display: inline-block;
+	}
+
+	.get_touch_mobile{
+		display: none;
+	}
+
+	.header-mobile{
+		display: none;
+	}
+
+	.header-pc{
+		display: inline-block;
+	}
+}
+
+/*for pc lower screen*/
+@media only screen and (max-width: 1265px)
+{	
+	.get_touch{
+		display: inline-block;
+	}
+
+	.get_touch_mobile{
+		display: none;
+	}
+
+	.content{
+		margin-top: 110px;
+	}
+
+	.header-mobile{
+		display: inline-block;
+	}
+
+	.hamburger{
+		display: inline-block;
+	}
+
+	.header-pc{
+		display: none;
+	}
+
+
+}
+
+/*for tab*/
+@media only screen and (max-width: 991px)
+{
+
+	.header-mobile{
+		display: inline-block;
+	}
+
+	.get_touch_mobile{
+		display: inline-block;
+	}
+
+	.get_touch{
+		display: none;
+	}
+
+	.hamburger{
+		display: inline-block;
+	}
+
+	.header-pc{
+		display: none;
+	}
+}
+
+/*for mobile*/
+@media only screen and (max-width: 770px)
+{
+
+	.home img{
+		height: 250px;
+	}
+
+	.carousel-text {
+		display: none;
+	}
+
+	.top_bar{
+		display: inline-block;
+	}
+
+	.top_bar img{
+		height: 50px;
+		width: 50px;
+	}
+
+	.top_bar .title {
+		margin-top: 0px;
+	    font-size: 25px;
+	}
+
+	.location{
+		display: none;
+	}
+
+	header > .header-mobile{
+		display: inline;
+	}
+
+	ul > .contact-info{
+		display: none;
+	}
+
+	.header-pc{
+		display: none;
+	}
+}
+
+/*for small screen of mobile*/
+@media only screen and (max-width: 500px){
+	.home img{
+		height: 200px;
+	}
+}

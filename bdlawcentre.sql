@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 20, 2018 at 06:00 PM
+-- Generation Time: Sep 21, 2018 at 10:53 PM
 -- Server version: 5.7.23-0ubuntu0.18.04.1
 -- PHP Version: 7.2.7-0ubuntu0.18.04.2
 
@@ -75,6 +75,7 @@ CREATE TABLE `informations` (
   `id` int(10) UNSIGNED NOT NULL,
   `title` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `moto` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `scroll_text` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `address` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phone` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -98,20 +99,8 @@ CREATE TABLE `informations` (
 -- Dumping data for table `informations`
 --
 
-INSERT INTO `informations` (`id`, `title`, `moto`, `address`, `email`, `phone`, `facebook`, `messenger`, `whatsapp`, `skype`, `viber`, `imo`, `youtube`, `twitter`, `linkedin`, `gplus`, `instagram`, `pinterest`, `created_at`, `updated_at`) VALUES
-(1, 'BD Law Centre', 'Fast-moving law firm', 'Dhaka, Bangladesh', 'contact@bdlawcentre.com', '+(88) 01711-993639', 'https://www.facebook.com/BdLawCentre', '', '+(88) 01711-993639', 'bdlawcentre', '+(88) 01711-993639', '+(88) 01711-993639', 'https://www.youtube.com/channel/UCl4ERPyULDEaGk5OfOBsWrQ', 'https://twitter.com/bd_lawcentre', 'https://www.linkedin.com/home?trk=nav_responsive_tab_home', 'https://plus.google.com/u/2/113093318782749641503?_ga=1.182708902.1809133291.1450810665', 'http://instagram.com', 'http://pinterest.com', '2018-09-15 08:58:37', '2018-09-15 08:58:37'),
-(2, 'BD Law Centre', 'Fast-moving law firm', 'Dhaka, Bangladesh', 'contact@bdlawcentre.com', '+(88) 01711-993639', 'https://www.facebook.com/BangladeshLawCentre', 'https://www.facebook.com/BdLawCentre', '+(88) 01711-993639', 'bdlawcentre', '+(88) 01711-993639', '+(88) 01711-993639', 'https://www.youtube.com/channel/UCl4ERPyULDEaGk5OfOBsWrQ', 'https://twitter.com/bd_lawcentre', 'https://www.linkedin.com/home?trk=nav_responsive_tab_home', 'https://plus.google.com/u/2/113093318782749641503?_ga=1.182708902.1809133291.1450810665', 'http://instagram.com', 'http://pinterest.com', '2018-09-15 16:30:36', '2018-09-15 16:30:36'),
-(3, 'BD Law Centre', 'Fast-moving law firm', 'Dhaka, Bangladesh', 'contact@bdlawcentre.com', '+(88) 01711-993639', 'https://www.facebook.com/BangladeshLawCentre', 'https://www.facebook.com/BdLawCentre', '+(88) 01711-993639', 'bdlawcentre', '+(88) 01711-993639', '+(88) 01711-993639', 'https://www.youtube.com/channel/UCl4ERPyULDEaGk5OfOBsWrQ', 'https://twitter.com/bd_lawcentre', 'https://www.linkedin.com/home?trk=nav_responsive_tab_home', 'https://plus.google.com/u/2/113093318782749641503?_ga=1.182708902.1809133291.1450810665', 'http://instagram.com', 'http://pinterest.com', '2018-09-15 16:30:56', '2018-09-15 16:30:56'),
-(4, 'BD Law Centre', 'Fast-moving law firm', 'Dhaka, Bangladesh', 'contact@bdlawcentre.com', '+(88) 01711-993639', 'https://www.facebook.com/BangladeshLawCentre', 'https://www.facebook.com/BdLawCentre', '+(88) 01711-993639', 'bdlawcentre', '+(88) 01711-993639', '+(88) 01711-993639', 'https://www.youtube.com/channel/UCl4ERPyULDEaGk5OfOBsWrQ', 'https://twitter.com/bd_lawcentre', 'https://www.linkedin.com/home?trk=nav_responsive_tab_home', 'https://plus.google.com/u/2/113093318782749641503?_ga=1.182708902.1809133291.1450810665', 'http://instagram.com', 'http://pinterest.com', '2018-09-15 16:31:23', '2018-09-15 16:31:23'),
-(5, 'BD Law Centre', 'Fast-moving law firm', 'Dhaka, Bangladesh', 'contact@bdlawcentre.com', '+(88) 01711-993639', 'https://www.facebook.com/BangladeshLawCentre', 'https://www.facebook.com/BdLawCentre', '+(88) 01711-993639', 'bdlawcentre', '+(88) 01711-993639', '+(88) 01711-993639', 'https://www.youtube.com/channel/UCl4ERPyULDEaGk5OfOBsWrQ', 'https://twitter.com/bd_lawcentre', 'https://www.linkedin.com/home?trk=nav_responsive_tab_home', 'https://plus.google.com/u/2/113093318782749641503?_ga=1.182708902.1809133291.1450810665', 'http://instagram.com', 'http://pinterest.com', '2018-09-15 16:32:13', '2018-09-15 16:32:13'),
-(6, 'BD Law Centre', 'Fast-moving law firm', 'Dhaka, Bangladesh', 'contact@bdlawcentre.com', '+(88) 01711-993639', 'https://www.facebook.com/BangladeshLawCentre', 'https://www.facebook.com/BdLawCentre', '+(88) 01711-993639', 'bdlawcentre', '+(88) 01711-993639', '+(88) 01711-993639', 'https://www.youtube.com/channel/UCl4ERPyULDEaGk5OfOBsWrQ', 'https://twitter.com/bd_lawcentre', 'https://www.linkedin.com/home?trk=nav_responsive_tab_home', 'https://plus.google.com/u/2/113093318782749641503?_ga=1.182708902.1809133291.1450810665', 'http://instagram.com', 'http://pinterest.com', '2018-09-15 16:32:23', '2018-09-15 16:32:23'),
-(7, 'BD Law Centre', 'Fast-moving law firm', 'Dhaka, Bangladesh', 'contact@bdlawcentre.com', '+(88) 01711-993639', 'https://www.facebook.com/BangladeshLawCentre', 'https://www.facebook.com/BdLawCentre', '+(88) 01711-993639', 'bdlawcentre', '+(88) 01711-993639', '+(88) 01711-993639', 'https://www.youtube.com/channel/UCl4ERPyULDEaGk5OfOBsWrQ', 'https://twitter.com/bd_lawcentre', 'https://www.linkedin.com/home?trk=nav_responsive_tab_home', 'https://plus.google.com/u/2/113093318782749641503?_ga=1.182708902.1809133291.1450810665', 'http://instagram.com', 'http://pinterest.com', '2018-09-15 16:32:53', '2018-09-15 16:32:53'),
-(8, 'BD Law Centre', 'Fast-moving law firm', 'Dhaka, Bangladesh', 'contact@bdlawcentre.com', '+(88) 01711-993639', 'https://www.facebook.com/BangladeshLawCentre', 'https://www.facebook.com/BdLawCentre', '+(88) 01711-993639', 'bdlawcentre', '+(88) 01711-993639', '+(88) 01711-993639', 'https://www.youtube.com/channel/UCl4ERPyULDEaGk5OfOBsWrQ', 'https://twitter.com/bd_lawcentre', 'https://www.linkedin.com/home?trk=nav_responsive_tab_home', 'https://plus.google.com/u/2/113093318782749641503?_ga=1.182708902.1809133291.1450810665', 'http://instagram.com', 'http://pinterest.com', '2018-09-17 13:01:24', '2018-09-17 13:01:24'),
-(9, 'BD Law Centre', 'Fast-moving law firm', 'Dhaka, Bangladesh', 'contact@bdlawcentre.com', '+(88) 01711-993639', 'https://www.facebook.com/BangladeshLawCentre', 'https://www.facebook.com/BdLawCentre', '+(88) 01711-993639', 'bdlawcentre', '+(88) 01711-993639', '+(88) 01711-993639', 'https://www.youtube.com/channel/UCl4ERPyULDEaGk5OfOBsWrQ', 'https://twitter.com/bd_lawcentre', 'https://www.linkedin.com/home?trk=nav_responsive_tab_home', 'https://plus.google.com/u/2/113093318782749641503?_ga=1.182708902.1809133291.1450810665', 'http://instagram.com', 'http://pinterest.com', '2018-09-17 13:06:24', '2018-09-17 13:06:24'),
-(10, 'BD Law Centre2', 'Fast-moving law firm', 'Dhaka, Bangladesh', 'contact@bdlawcentre.com', '+(88) 01711-993639', 'https://www.facebook.com/BangladeshLawCentre', 'https://www.facebook.com/BdLawCentre', '+(88) 01711-993639', 'bdlawcentre', '+(88) 01711-993639', '+(88) 01711-993639', 'https://www.youtube.com/channel/UCl4ERPyULDEaGk5OfOBsWrQ', 'https://twitter.com/bd_lawcentre', 'https://www.linkedin.com/home?trk=nav_responsive_tab_home', 'https://plus.google.com/u/2/113093318782749641503?_ga=1.182708902.1809133291.1450810665', 'http://instagram.com', 'http://pinterest.com', '2018-09-17 13:26:50', '2018-09-17 13:26:50'),
-(11, 'BD Law Centre', 'Fast-moving law firm', 'Dhaka, Bangladesh', 'contact@bdlawcentre.com', '+(88) 01711-993639', 'https://www.facebook.com/BangladeshLawCentre', 'https://www.facebook.com/BdLawCentre', '+(88) 01711-993639', 'bdlawcentre', '+(88) 01711-993639', '+(88) 01711-993639', 'https://www.youtube.com/channel/UCl4ERPyULDEaGk5OfOBsWrQ', 'https://twitter.com/bd_lawcentre', 'https://www.linkedin.com/home?trk=nav_responsive_tab_home', 'https://plus.google.com/u/2/113093318782749641503?_ga=1.182708902.1809133291.1450810665', 'http://instagram.com', 'http://pinterest.com', '2018-09-17 13:27:11', '2018-09-17 13:27:11'),
-(12, 'BD Law Centre3', 'Fast-moving law firm', 'Dhaka, Bangladesh', 'contact@bdlawcentre.com', '+(88) 01711-993639', 'https://www.facebook.com/BangladeshLawCentre', 'https://www.facebook.com/BdLawCentre', '+(88) 01711-993639', 'bdlawcentre', '+(88) 01711-993639', '+(88) 01711-993639', 'https://www.youtube.com/channel/UCl4ERPyULDEaGk5OfOBsWrQ', 'https://twitter.com/bd_lawcentre', 'https://www.linkedin.com/home?trk=nav_responsive_tab_home', 'https://plus.google.com/u/2/113093318782749641503?_ga=1.182708902.1809133291.1450810665', 'http://instagram.com', 'http://pinterest.com', '2018-09-20 09:45:17', '2018-09-20 09:45:17'),
-(13, 'BD Law Centre', 'Fast-moving law firm', 'Dhaka, Bangladesh', 'contact@bdlawcentre.com', '+(88) 01711-993639', 'https://www.facebook.com/BangladeshLawCentre', 'https://www.facebook.com/BdLawCentre', '+(88) 01711-993639', 'bdlawcentre', '+(88) 01711-993639', '+(88) 01711-993639', 'https://www.youtube.com/channel/UCl4ERPyULDEaGk5OfOBsWrQ', 'https://twitter.com/bd_lawcentre', 'https://www.linkedin.com/home?trk=nav_responsive_tab_home', 'https://plus.google.com/u/2/113093318782749641503?_ga=1.182708902.1809133291.1450810665', 'http://instagram.com', 'http://pinterest.com', '2018-09-20 09:45:37', '2018-09-20 09:45:37');
+INSERT INTO `informations` (`id`, `title`, `moto`, `scroll_text`, `address`, `email`, `phone`, `facebook`, `messenger`, `whatsapp`, `skype`, `viber`, `imo`, `youtube`, `twitter`, `linkedin`, `gplus`, `instagram`, `pinterest`, `created_at`, `updated_at`) VALUES
+(15, 'BD Law Centre', 'Fast-moving law firm', 'Welcome to BD Law Centre. The fast moving law firm of Bangladesh', 'Dhaka, Bangladesh', 'contact@bdlawcentre.com', '+(88) 01711-993639', 'https://www.facebook.com/BangladeshLawCentre', 'https://www.facebook.com/BdLawCentre', '+(88) 01711-993639', 'bdlawcentre', '+(88) 01711-993639', '+(88) 01711-993639', 'https://www.youtube.com/channel/UCl4ERPyULDEaGk5OfOBsWrQ', 'https://twitter.com/bd_lawcentre', 'https://www.linkedin.com/home?trk=nav_responsive_tab_home', 'https://plus.google.com/u/2/113093318782749641503?_ga=1.182708902.1809133291.1450810665', 'http://instagram.com', 'http://pinterest.com', '2018-09-21 16:50:24', '2018-09-21 16:50:24');
 
 -- --------------------------------------------------------
 
@@ -331,7 +320,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Sharif Noor Zisad', 'snzisad@gmail.com', '$2y$10$hMnZ.02SiOARPJ1nCDVOVeCvSBr0yW/gEBMY7ThHL2hZEsq7oeXCq', 'b5qnB5smCT0G0Ha2OTACkzLo9FUXP6eYUgT0bRw6eaNz7OP2Li4XxQgQhNiE', '2018-09-15 13:48:54', '2018-09-15 13:48:54');
+(1, 'Sharif Noor Zisad', 'snzisad@gmail.com', '$2y$10$hMnZ.02SiOARPJ1nCDVOVeCvSBr0yW/gEBMY7ThHL2hZEsq7oeXCq', 'GIer9ORv8ALOSje5ehWXMCpPbbCGAdIkGyvewaefexPU6PQiXBo731PeB4vf', '2018-09-15 13:48:54', '2018-09-15 13:48:54');
 
 --
 -- Indexes for dumped tables
@@ -424,7 +413,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `clients`
 --
 ALTER TABLE `clients`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `feedback`
 --
@@ -434,7 +423,7 @@ ALTER TABLE `feedback`
 -- AUTO_INCREMENT for table `informations`
 --
 ALTER TABLE `informations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `lawers`
 --
@@ -449,7 +438,7 @@ ALTER TABLE `links`
 -- AUTO_INCREMENT for table `memberships`
 --
 ALTER TABLE `memberships`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `migrations`
 --
@@ -464,7 +453,7 @@ ALTER TABLE `paymentmethods`
 -- AUTO_INCREMENT for table `practices`
 --
 ALTER TABLE `practices`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT for table `slideimages`
 --
@@ -474,7 +463,7 @@ ALTER TABLE `slideimages`
 -- AUTO_INCREMENT for table `trainings`
 --
 ALTER TABLE `trainings`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `users`
 --

@@ -3,6 +3,7 @@
 @section('title',"Welcome to BD Law Centre")
 
 @section('content')
+	<!-- Image Slide -->
 	<div class="home">
 
 		@if(count($slideimages) > 0)
@@ -42,7 +43,7 @@
 		    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 		    <span class="sr-only">Previous</span>
 		  </a>
-		  <a class="carousel-control-next" href="#carouselSlideShowIndicators" role="button" data-slide="next" style="width: 10%">
+		  <a class="carousel-control-next" href="#carouselSlideShowIndicators" role="button" data-slide="next" style="width: 15%">
 		    <span class="carousel-control-next-icon" aria-hidden="true"></span>
 		    <span class="sr-only">Next</span>
 		  </a>
@@ -71,17 +72,17 @@
 			<div class="row">
 
 				<div class="col-lg-8">
-					<h2 class="section_title">TRAINING</h2>
+					<h2 class="section_title" style="text-align: center;">TRAINING</h2>
 
 					@if(count($trainings) >0)
 					<div class="container">
-						<div id="carouselTrainingListIndicators" class="carousel slide" data-ride="carousel" style="display: all;">
+						<div id="carouselTrainingListIndicators" class="carousel slide" data-ride="carousel">
 
-							<div class="carousel-inner" style="margin-left: 40px;">
+							<div class="carousel-inner" style="margin-top: 20px;">
 							    <div class="carousel-item active">
 							    	<div class="row">
 										@for($i=0; $i< count($trainings) && $i < 2 ; $i++)
-									    	<a class="training_list" href="#" data-toggle="modal" data-target="#descriptionModalCenter">
+									    	<a class="training_list" href="#" data-toggle="modal" data-target="#descriptionModalCenter" style=" margin: auto; margin-top: 0px; margin-bottom: 10px;">
 												<img src="{{asset('picture/training/'.$trainings[$i]->picture)}}">
 												<h1 class="training_title">{{$trainings[$i]->title}}</h1>
 												<p class="training_description">{{$trainings[$i]->description}} </p>
@@ -94,7 +95,7 @@
 								    <div class="carousel-item ">
 								    	<div class="row">
 							    			@for($i=$j; $i< count($trainings) && $i < $j+2 ; $i++)
-										    	<a class="training_list" href="#" data-toggle="modal" data-target="#descriptionModalCenter">
+										    	<a class="training_list" href="#" data-toggle="modal" data-target="#descriptionModalCenter" style=" margin: auto; margin-top: 0px; margin-bottom: 10px;">
 													<img src="{{asset('picture/training/'.$trainings[$i]->picture)}}">
 													<h1 class="training_title">{{$trainings[$i]->title}}</h1>
 													<p class="training_description">{{$trainings[$i]->description}}</p>
@@ -105,11 +106,11 @@
 							    @endfor
 							  </div>
 
-							  <a class="carousel-control-prev" href="#carouselTrainingListIndicators" role="button" data-slide="prev"  style="width: 10%">
+							  <a class="carousel-control-prev" href="#carouselTrainingListIndicators" role="button" data-slide="prev"  style="width: 0%">
 							    <span class="fa fa-arrow-circle-left fa-2x text-dark" aria-hidden="true"	></span>
 							    <span class="sr-only">Previous</span>
 							  </a>
-							  <a class="carousel-control-next" href="#carouselTrainingListIndicators" role="button" data-slide="next"  style="width: 10%">
+							  <a class="carousel-control-next" href="#carouselTrainingListIndicators" role="button" data-slide="next"  style="width: 0%">
 							    <span class="fa fa-arrow-circle-right fa-2x text-dark" aria-hidden="true"></span>
 							    <span class="sr-only">Next</span>
 							  </a>
@@ -120,7 +121,37 @@
 				</div>
 
 				<div class="col-lg-4 ">
-					<h2 class="section_title">GET IN TOUCH</h2>
+					<h2 class="section_title" style="text-align: center;">GET IN TOUCH</h2>
+
+					<!-- for mobile and tab-->
+					<div class="get_touch_mobile" style="margin-top: 0px;">
+						<div class="row">
+							<div class="col-lg-5">
+								<div class="shape" style="background-image: url(https://image.freepik.com/free-vector/books-stack-realistic_1284-4735.jpg);" data-toggle="modal" data-target=".book-appoinment-modal">
+								</div>
+								<h1  data-toggle="modal" data-target=".book-appoinment-modal">BOOK APPOINMENT</h1>
+
+							</div>
+							<div class="col-lg-5">
+								<div class="shape" style="background-image: url(http://www.entitcs.com/style/images/art/s3.jpg);">
+								</div>
+								<h1>GET LEGAL CONSULTANCY</h1>
+							</div>
+							<div class="col-lg-5 ">
+								<div class="shape" style="background-image: url(https://thumb9.shutterstock.com/display_pic_with_logo/5589/127880048/stock-photo-ask-questions-info-text-word-cloud-concept-word-cloud-tag-cloud-text-business-concept-word-127880048.jpg);">
+								</div>
+								<h1>ASK YOUR QUESTION</h1>
+							</div>
+							<div class="col-lg-5">
+								<div class="shape" style="background-image: url(http://www.medianv.com/wp-content/uploads/2017/10/how-can-we-help-v2.jpg);"  data-toggle="modal" data-target=".get-help-modal">
+								</div>
+								<h1   data-toggle="modal" data-target=".get-help-modal">HOW CAN WE HELP YOU?</h1>
+							</div>
+							
+						</div>
+					</div>
+
+					<!-- for pc  -->
 					<div class="get_touch">
 						<div class="row">
 							<div class="col-lg-5" data-toggle="modal" data-target=".book-appoinment-modal">
@@ -137,24 +168,22 @@
 							<div class="col-lg-5 ">
 								<div class="shape" style="background-image: url(https://thumb9.shutterstock.com/display_pic_with_logo/5589/127880048/stock-photo-ask-questions-info-text-word-cloud-concept-word-cloud-tag-cloud-text-business-concept-word-127880048.jpg);">
 								</div>
-								<h1>ASK YOUR QUESTION</h1>
+								<h1 style="left: 25px;top: 13px;">ASK YOUR QUESTION</h1>
 							</div>
 							<div class="col-lg-5" data-toggle="modal" data-target=".get-help-modal">
 								<div class="shape" style="background-image: url(http://www.medianv.com/wp-content/uploads/2017/10/how-can-we-help-v2.jpg);">
 								</div>
-								<h1>HOW CAN WE HELP YOU?</h1>
+								<h1 style="left: 10px;">HOW CAN WE HELP YOU?</h1>
 							</div>
 							
 						</div>
 					</div>
 				</div>
-
 			</div>
 		</div>
 	</div>
 
 <!-- Practices -->
-	
 @if(count($practices) > 0)
 	<div class="features" id="practices">
 		<div class="container">
@@ -199,11 +228,11 @@
 				<div class="carousel-inner">
 	
 				    <div class="carousel-item active">
-						<div class="row features_row" style="margin: 20px;">
+						<div class="row features_row">
 							<!-- Features Item -->
 				    		@for($i=0; $i< count($practices) && $i < 4 ; $i++)
-								<div class="col-lg-3 feature_col">
-									<div class="service_col_1 text-center">
+								<div class="col-lg-3 feature_col text-center">
+									<div class="service_col_1" style="margin: auto;">
 										<a href="#" class="practice_details" data-toggle="modal" data-target="#descriptionModalCenter">
 											<img src="{{asset('picture/practice/'.$practices[$i]->picture)}}">
 											<div class="title_bg"></div>
@@ -222,9 +251,9 @@
 						<div class="row features_row" style="margin: 20px;">
 							<!-- Features Item -->
 				    		@for($i=$j; $i< count($practices) && $i < $j+4 ; $i++)
-								<div class="col-lg-3 feature_col">
-									<div class="service_col_1 text-center">
-										<a href="#" data-toggle="modal" data-target="#descriptionModalCenter">
+								<div class="col-lg-3 feature_col text-center">
+									<div class="service_col_1" style="margin: auto;">
+										<a href="#" class="practice_details" data-toggle="modal" data-target="#descriptionModalCenter">
 											<img src="{{asset('picture/practice/'.$practices[$i]->picture)}}">
 											<div class="title_bg"></div>
 											<h5 class="feature_title"><br>{{$practices[$i]->title}}</h5>
@@ -239,11 +268,11 @@
 				    @endfor
 				  </div>
 
-				  <a class="carousel-control-prev" href="#carouselPractiseIndicators" role="button" data-slide="prev" style="width: 8%;">
+				  <a class="carousel-control-prev" href="#carouselPractiseIndicators" role="button" data-slide="prev" style="width: 10%;">
 				    <span class="fa fa-chevron-circle-left fa-2x text-light" aria-hidden="true"	></span>
 				    <span class="sr-only">Previous</span>
 				  </a>
-				  <a class="carousel-control-next" href="#carouselPractiseIndicators" role="button" data-slide="next" style="width: 8%;">
+				  <a class="carousel-control-next" href="#carouselPractiseIndicators" role="button" data-slide="next" style="width: 10%;">
 				    <span class="fa fa-chevron-circle-right fa-2x text-light" aria-hidden="true"></span>
 				    <span class="sr-only">Next</span>
 				  </a>
@@ -559,11 +588,12 @@
 	</div>
 @endif
 
+
 @if(count($clients) > 0)
 	<!-- Our Client -->
 	<div class="features" id="Client">
 		<div class="container">
-			<div class="row" style="margin-bottom: 50px;">
+			<div class="row">
 				<div class="col">
 					<div class="section_title_container text-center">
 						<h2 class="section_title ">OUR CLIENTS</h2>
@@ -571,9 +601,9 @@
 				</div>
 			</div>
 			
-			<div class="row">	
+			<div class="row features_row">	
 				@foreach($clients as $client)
-					<div class="col-sm-2 col-md-2 col-lg-2">
+					<div class="col-lg-2">
 						<div class="client">
 							<img src="{{asset('picture/client/'.$client->picture)}}">
 						</div>
@@ -663,7 +693,7 @@
 			<div class="row">	
 
 				@foreach($membership as $member)
-					<div class="col-sm-2">
+					<div class="col-lg-2">
 						<div class="membership">
 							<img src="{{asset('picture/membership/'.$member->picture)}}">
 						</div>

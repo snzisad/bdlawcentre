@@ -4,6 +4,9 @@
 		<title>@yield('title')</title>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- mobile version -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+
         <link rel="icon" type="image/png" sizes="16x16" href='{{asset("picture/logo/logo.png")}}'>
 
 		<link rel="stylesheet" type="text/css" href="{{asset('content/unicat/styles/bootstrap4/bootstrap.min.css')}}">
@@ -14,6 +17,7 @@
 		<link rel="stylesheet" type="text/css" href="{{asset('content/unicat/styles/main_styles.css')}}">
 		<link rel="stylesheet" type="text/css" href="{{asset('content/unicat/styles/responsive.css')}}">
 		<link rel="stylesheet" type="text/css" href="{{asset('content/css/home.css')}}"/>
+		<link rel="stylesheet" type="text/css" href="{{asset('content/css/responsive.css')}}"/>
 
 	</head>
 
@@ -21,12 +25,11 @@
 
 		<div class="super_container">
 
-			<!-- Header -->
-
-			<header class="header">
+			<!-- Header for PC Version-->
+			<header class="header header-pc">
 
 				<div class="header_container" style="padding: 0px;">
-					<marquee behavior="scroll" scrollamount="3" direction="left">Welcome to BD Law Center .. The Fast-moving law firm of Bangladesh</marquee>
+					<marquee behavior="scroll" scrollamount="3" direction="left">{{$info->scroll_text}}</marquee>
 				</div>
 					
 				<!-- Top Bar -->
@@ -42,14 +45,6 @@
 												<div class="title">{{ $info->title }}</div>
 												<p class="sub-title">{{ $info->moto }}</p>
 											</li>
-											<!-- <li>
-												<i class="fa fa-phone" aria-hidden="true"></i>
-												<div>001-1234-88888</div>
-											</li>
-											<li>
-												<i class="fa fa-envelope-o" aria-hidden="true"></i>
-												<div>info.deercreative@gmail.com</div>
-											</li> -->
 										</ul>
 										<ul class="top_bar_contact_list ml-auto">
 											<li class="contact-info">
@@ -104,29 +99,6 @@
 					</div>
 				</div>
 
-				<!-- More header menu -->
-				<div class="header_more_menu_item_container">
-					<div class="container">
-						<div class="row">
-							<div class="col d-flex justify-content-around">
-								<div class="header_more_menu_item_content">
-									<ul class="main_nav ">
-										<li><a href="#">News & Events</li>
-										<li><a href="#">Award</li>
-										<li><a href="#">Notice</li>
-										<li><a href="#">Publication</li>
-										<li><a href="#">FAQ</li>
-										<li><a href="#">Certifications</li>
-									</ul>
-								</div>
-								<div class="p-2">
-									<a class="btn_more_header_menu_item text-danger" href="#"><b class="fa fa-times"> Close</b></a>
-								</div>
-							</div>
-						</div>
-					</div>			
-				</div>
-
 				<!-- Header Search Panel -->
 				<div class="header_search_container">
 					<div class="container">
@@ -149,8 +121,45 @@
 				</div>			
 			</header>
 
-			<!-- Menu -->
+			<!-- Header for Mobile Version-->
+			<header class="header header-mobile">
+					
+				<!-- Top Bar -->
+				<div class="top_bar">
+					<div class="top_bar_container">
+						<div class="container" style="max-width: 1310px;">
+							<div class="row">
+								<div class="col">
+									<div class="top_bar_content d-flex flex-row align-items-center justify-content-start">
+										<ul class="mr-auto p-2 top_bar_contact_list">
+											<img src="{{asset("picture/logo/logo.png")}}" alt="logo">
+											<li class="title_section">
+												<div class="title">{{ $info->title }}</div>
+												<p class="sub-title">{{ $info->moto }}</p>
+											</li>
+										</ul>
 
+										<ul class="top_bar_contact_list p-2" style="margin-right: 8px;">
+											<li class="contact-info">
+												<div style="color: #606060;"><i class="fa fa-phone" style="color: #ff9100;" aria-hidden="true"></i>  {{ $info->phone }}</div>
+												<p style="color: #606060;"><i class="fa fa-envelope-o" style="color: #ff9100;" aria-hidden="true"></i>  {{ $info->email }}</p>
+											</li>
+										</ul>
+
+										<ul class="p-2" style="margin-left: 0px;">
+											<li class="hamburger menu_mm">
+												<i class="fa fa-bars menu_mm" aria-hidden="true"></i>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>				
+				</div>
+			</header>
+
+			<!-- Mobile Menu -->
 			<div class="menu d-flex flex-column align-items-end justify-content-start text-right menu_mm trans_400">
 				<div class="menu_close_container"><div class="menu_close"><div></div><div></div></div></div>
 				<div class="search">
@@ -163,15 +172,23 @@
 				</div>
 				<nav class="menu_nav">
 					<ul class="menu_mm">
-						<li class="menu_mm"><a href="index.html">Home</a></li>
-						<li class="menu_mm"><a href="#">About</a></li>
-						<li class="menu_mm"><a href="#">Courses</a></li>
-						<li class="menu_mm"><a href="#">Blog</a></li>
-						<li class="menu_mm"><a href="#">Page</a></li>
-						<li class="menu_mm"><a href="contact.html">Contact</a></li>
+						<li class="menu_mm"><a href="/">Home</a></li>
+						<li class="menu_mm"><a href="#practices">Practices</a></li>
+						<li class="menu_mm"><a href="#lawers">Lawyers</a></li>
+						<li class="menu_mm"><a href="#Client">Our Client</a></li>
+						<li class="menu_mm"><a href="#">Land & Housing</a></li>
+						<li class="menu_mm" ><a href="#trainings">Training</a></li>
+						<li class="menu_mm"><a href="#">Major Cases</a></li>
+						<li class="menu_mm"><a href="#">Social Move</a></li>
+						<li class="menu_mm"><a href="#">Gallery</a></li>
+						<li class="menu_mm"><a href="#">News & Events</a></li> 
+						<li class="menu_mm"><a href="#">FAQ</a></li> 
+						<li class="menu_mm"><a href="#">Certifications</a></li>
 					</ul>
 				</nav>
 			</div>
+
+
 
 			<!-- Main Content -->
 
@@ -179,155 +196,146 @@
 				@yield('content')
 			</div>
 			
-			
-			<!-- Footer -->
+		</div>
 
+		<!-- Footer -->
 		<footer class="footer">
-				<div class="footer_background" style="background-image:url(images/footer_background.png)"></div>
-				<div class="container">
-					<div class="row footer_row">
-						<div class="col">
-							<div class="footer_content">
-								<div class="row">
+			<div class="footer_background" style="background-image:url(images/footer_background.png)"></div>
+			<div class="container">
+				<div class="row footer_row">
+					<div class="col">
+						<div class="footer_content">
+							<div class="row">
 
-									<div class="col-lg-3 footer_col">
+								<div class="col-lg-3 footer_col">
 
-										<!-- Footer Contact -->
-										<div class="footer_section footer_contact">
-											<div class="footer_title">Contact Us</div>
-											<div class="footer_contact_info">
-												<ul>
-													<li><i class="fa fa-envelope-o"></i> {{ $info->email }}</li>
+									<!-- Footer Contact -->
+									<div class="footer_section footer_contact">
+										<div class="footer_title">Contact Us</div>
+										<div class="footer_contact_info">
+											<ul>
+												<li><i class="fa fa-envelope-o"></i> {{ $info->email }}</li>
 
-													<li><i class="fa fa-phone "></i> {{ $info->phone }}</li>
+												<li><i class="fa fa-phone "></i> {{ $info->phone }}</li>
 
-													<li><i class="fa fa-skype "></i> {{ $info->skype }}</li>
+												<li><i class="fa fa-skype "></i> {{ $info->skype }}</li>
 
-													<li><img src="https://cdn3.iconfinder.com/data/icons/social-media-2169/24/social_media_social_media_logo_imo-512.png" width="15px" height="15px"> {{ $info->imo }}</li>
+												<li><img src="https://cdn3.iconfinder.com/data/icons/social-media-2169/24/social_media_social_media_logo_imo-512.png" width="15px" height="15px"> {{ $info->imo }}</li>
 
-													<li><i class="fa fa-whatsapp "></i> {{ $info->whatsapp }}</li>
-													
-													<li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8NsvIxD0rS5cbAharjpZXPsoc7TnGmbaoGTWu5uK7yK0SXwoS" width="15px" height="15px"> {{ $info->viber }}</li>
-													
-													<li><img src="https://cdn.vectorlogosupply.com/logos/large/2x/facebook-messenger-png-transparent-logo.png" width="15px" height="15px"> <a href="{{ $info->messenger }}"> {{ $info->title }}</a></li>
-													
-													<li><i class="fa fa-map-marker fa-lg"></i> {{ $info->address }}</li>
-												</ul>
-											</div>
-											<div class="footer_social">
-												<ul>
-													<li><a href="{{ $info->facebook }}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-
-													<li><a href="{{ $info->youtube }}"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
-
-													<li><a href="{{ $info->twitter }}"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-
-													<li><a href="{{ $info->linkedin }}"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-
-													<li><a href=" {{ $info->gplus }}"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
-
-													<li><a href="{{ $info->instagram }}"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-
-													<li><a href="{{ $info->pinterest }}"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
-
-												</ul>
-											</div>
+												<li><i class="fa fa-whatsapp "></i> {{ $info->whatsapp }}</li>
+												
+												<li><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ8NsvIxD0rS5cbAharjpZXPsoc7TnGmbaoGTWu5uK7yK0SXwoS" width="15px" height="15px"> {{ $info->viber }}</li>
+												
+												<li><img src="https://cdn.vectorlogosupply.com/logos/large/2x/facebook-messenger-png-transparent-logo.png" width="15px" height="15px"> <a href="{{ $info->messenger }}"> {{ $info->title }}</a></li>
+												
+												<li><i class="fa fa-map-marker fa-lg"></i> {{ $info->address }}</li>
+											</ul>
 										</div>
-										
+										<div class="footer_social">
+											<ul>
+												<li><a href="{{ $info->facebook }}"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+
+												<li><a href="{{ $info->youtube }}"><i class="fa fa-youtube-play" aria-hidden="true"></i></a></li>
+
+												<li><a href="{{ $info->twitter }}"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+
+												<li><a href="{{ $info->linkedin }}"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+
+												<li><a href=" {{ $info->gplus }}"><i class="fa fa-google-plus" aria-hidden="true"></i></a></li>
+
+												<li><a href="{{ $info->instagram }}"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+
+												<li><a href="{{ $info->pinterest }}"><i class="fa fa-pinterest" aria-hidden="true"></i></a></li>
+
+											</ul>
+										</div>
 									</div>
+									
+								</div>
 
-									<div class="col-lg-4 footer_col">
-							
-										<!-- Footer Contact -->
-										<div class="footer_section footer_contact">
-											<div class="footer_title">Location</div>
-											<div class="footer_contact_info">
+								<div class="col-lg-4 footer_col location">
+						
+									<!-- Footer Contact -->
+									<div class="footer_section footer_contact">
+										<div class="footer_title">Location</div>
+										<div class="footer_contact_info">
 
-												<script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
+											<script src='https://maps.googleapis.com/maps/api/js?v=3.exp'></script>
 
-												<div>
-													<div id='gmap_canvas'>
-														
-													</div>
+											<div>
+												<div id='gmap_canvas'>
+													
 												</div>
-
 											</div>
-										</div>
-										
-									</div>
 
-
-									<div class="col-lg-3 footer_col">
-							
-										<!-- Footer links -->
-										<div class="footer_section footer_links">
-											<div class="footer_title">Payment Method</div>
-											<div class="footer_links_container">
-												<ul>
-													@foreach($paymentmethod as $method)
-														<li class="payment"><img src="{{asset('picture/paymentmethod/'.$method->picture)}}" height="50px" width="100px"></li>
-													@endforeach
-													
-												</ul>
-											</div>
 										</div>
 									</div>
+									
+								</div>
 
-									<div class="col-lg-2 footer_col">
-							
-										<!-- Footer links -->
-										<div class="footer_section footer_links"  style="padding-left: 20px;">
-											<div class="footer_title">Menu</div>
-											<div class="footer_links_container">
-												<ul>
-													<li><a href="#">T&C</a></li>
-													<li><a href="#">Privacy</a></li>
-													<li><a href="#">Sitemap</a></li>
-													<li><a href="#">FAQs</a></li>
-													<li><a href="#">Videos</a></li>
-													<li><a href="#">Gallery</a></li>
-												</ul>
-											</div>
+
+								<div class="col-lg-3 footer_col">
+						
+									<!-- Footer links -->
+									<div class="footer_section footer_links">
+										<div class="footer_title">Payment Method</div>
+										<div class="footer_links_container">
+											<ul>
+												@foreach($paymentmethod as $method)
+													<li class="payment"><img src="{{asset('picture/paymentmethod/'.$method->picture)}}" height="50px" width="100px"></li>
+												@endforeach
+												
+											</ul>
 										</div>
 									</div>
+								</div>
 
+								<div class="col-lg-2 footer_col">
+						
+									<!-- Footer links -->
+									<div class="footer_section footer_links"  style="padding-left: 20px;">
+										<div class="footer_title">Menu</div>
+										<div class="footer_links_container">
+											<ul>
+												<li><a href="#">T&C</a></li>
+												<li><a href="#">Privacy</a></li>
+												<li><a href="#">Sitemap</a></li>
+												<li><a href="#">FAQs</a></li>
+												<li><a href="#">Videos</a></li>
+												<li><a href="#">Gallery</a></li>
+											</ul>
+										</div>
+									</div>
 								</div>
-							</div>
-						</div>
-					</div>
 
-					<div class="row copyright_row">
-						<div class="col">
-							<div class="copyright d-flex flex-lg-row flex-column align-items-center justify-content-start">
-								<div class="cr_text">
-									Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
-								</div>
-								<div class="ml-lg-auto cr_links">
-									Developed By: <a href="http://banglasofttech.com">Bangla Soft Tech</a>
-								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-			</footer>
-		</div>
 
+				<div class="row copyright_row">
+					<div class="col">
+						<div class="copyright d-flex flex-lg-row flex-column align-items-center justify-content-start">
+							<div class="cr_text">
+								Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved
+							</div>
+							<div class="ml-lg-auto cr_links">
+								Developed By: <a href="http://banglasofttech.com">Bangla Soft Tech</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
 
 		<script src="{{asset('content/unicat/js/jquery-3.2.1.min.js')}}"></script>
-		<script src="{{asset('content/unicat/plugins/greensock/TweenMax.min.js"')}}></script>
-		<script src="{{asset('content/unicat/plugins/greensock/TimelineMax.min.js')}}"></script>
 		<script src="{{asset('content/unicat/plugins/scrollmagic/ScrollMagic.min.js')}}"></script>
-		<script src="{{asset('content/unicat/plugins/greensock/animation.gsap.min.js')}}"></script>
-		<script src="{{asset('content/unicat/plugins/greensock/ScrollToPlugin.min.js')}}"></script>
-		<script src="{{asset('content/unicat/plugins/OwlCarousel2-2.2.1/owl.carousel.js')}}"></script>
-		<script src="{{asset('content/unicat/plugins/easing/easing.js')}}"></script>
-		<script src="{{asset('content/unicat/plugins/parallax-js-master/parallax.min.js')}}"></script>
-
-		<script src="{{asset('content/js/popper.js')}}"></script>
+		<!-- <script src="{{asset('content/unicat/styles/bootstrap4/bootstrap.min.js')}}"></script> -->
+		<script src="{{asset('content/unicat/styles/bootstrap4/popper.js')}}"></script>
+		<script src="{{asset('content/unicat/js/custom.js')}}"></script>
 		<script src="{{asset('content/js/custom.js')}}"></script>
 		<script src="{{asset('content/js/homepage.js')}}"></script>
 		<script src="{{asset('content/js/bootstrap.min.js')}}"></script>
-
 
 	</body>
 </html>

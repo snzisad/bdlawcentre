@@ -18,6 +18,10 @@ Route::get('/register', function () {
         return redirect("login");
 });
 
+Route::get('/test', function () {
+        return view("test");
+});
+
 Route::post('/register', function () {
         return redirect("login");
 })->name("register");
