@@ -153,7 +153,7 @@
 
 					<!-- for pc  -->
 					<div class="get_touch">
-						<div class="row">
+						<div class="row text-center">
 							<div class="col-lg-5" data-toggle="modal" data-target=".book-appoinment-modal">
 								<div class="shape" style="background-image: url(https://image.freepik.com/free-vector/books-stack-realistic_1284-4735.jpg);">
 								</div>
