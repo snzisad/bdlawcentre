@@ -5,6 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use App\Information;
 use App\Paymentmethod;
+use App\Menu;
 use Auth;
 
 class AppServiceProvider extends ServiceProvider
@@ -17,13 +18,21 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         view()->composer("layout.adminpanellayout", function($layout){
-            $layout->with("info", Information::orderBy('id', 'desc')->first());
+            $ctx = [
+                'info' => Information::orderBy('id', 'desc')->first(),
+            ];
+
+            $layout->with($ctx);
         });
+
         view()->composer("layout.layout", function($layout){
-            $layout->with("info", Information::orderBy('id', 'desc')->first());
-        });
-        view()->composer("layout.layout", function($layout){
-            $layout->with("paymentmethod", Paymentmethod::orderBy('id', 'asc')->get());
+            $ctx = [
+                'info' => Information::orderBy('id', 'desc')->first(),
+                'root_menu' => Menu::where('parent', 0)->with('child')->orderBy('id', 'asc')->get(),
+                "paymentmethod" => Paymentmethod::orderBy('id', 'asc')->get(),
+            ];
+
+            $layout->with($ctx);
         });
     }
 

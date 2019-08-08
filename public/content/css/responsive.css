@@ -17,6 +17,7 @@
 	.header-pc{
 		display: inline-block;
 	}
+
 }
 
 /*for pc lower screen*/
@@ -46,6 +47,11 @@
 		display: none;
 	}
 
+	.banner{
+		margin-left: 0px;
+		margin-right: 50px;
+	}
+
 
 }
 
@@ -71,6 +77,18 @@
 
 	.header-pc{
 		display: none;
+	}
+
+
+	.banner{
+		margin-left: -15px;
+		margin-top: -10px;
+		margin-right: 0px;
+	}
+	
+	.help-section{
+		margin: auto;
+		margin-top: 50px;
 	}
 }
 
@@ -115,11 +133,33 @@
 	.header-pc{
 		display: none;
 	}
+
+
+	.banner{
+		margin-left: -15px;
+		margin-top: -15px;
+		margin-right: 0px;
+	}
+	
+	.help-section{
+		margin: auto;
+		margin-top: 20px;
+	}
 }
 
 /*for small screen of mobile*/
 @media only screen and (max-width: 500px){
 	.home img{
 		height: 200px;
+	}
+	.banner{
+		margin-left: -15px;
+		margin-top: -15px;
+		margin-right: 0px;
+	}
+	
+	.help-section{
+		margin: auto;
+		margin-top: 20px;
 	}
 }

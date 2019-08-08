@@ -131,8 +131,9 @@ $(document).ready(function()
 		{
 			$('.search_button').on('click', function()
 			{
+				console.log("Zisad");
 
-				$('.header_search_container').toggleClass('active');
+				$('.header_search_container').class('active');
 
 
 				// if($('.header_search_container').length)
@@ -143,10 +144,10 @@ $(document).ready(function()
 		}
 
 		$('.header_search_close_button').on('click', function()
-			{
-				$('.header_search_container').toggleClass('active');
-				return false;
-			});
+		{
+			$('.header_search_container').toggleClass('active');
+			return false;
+		});
 
 	}
 

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,13 +20,11 @@
 
     <!-- Custom Css for Admin Panel -->
     <link href='{{asset("content/css/adminpanel.css")}}' rel="stylesheet">
+    
+    <link href='{{asset("content/ckeditor/ckeditor.css")}}' rel="stylesheet">
 
     <!-- Font Awesome -->
-
-        <link href="{{asset('content/unicat/plugins/font-awesome-4.7.0/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
-    <!-- <link href='https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel="stylesheet"> -->
-    <!-- <link href='{{asset("content/css/font-awesome.min.css")}}' rel="stylesheet"> -->
-
+    <link href="{{asset('content/unicat/plugins/font-awesome-4.7.0/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">    
     
 </head>
 
@@ -47,7 +45,7 @@
                     <li class="nav-item"> 
                         <a class="nav-link nav-toggler hidden-md-up text-muted  " href="javascript:void(0)">
                         <div class="navbar-brand">
-                            <img src='{{asset("picture/logo/logo.png")}}' class="dark-logo" width="50px" height="50px" />
+                            <img src="{{asset('content/images/logo.png')}}" class="dark-logo" width="120px" height="40px" />
                             <!-- <img src='{{asset("content/images/logo.png")}}' alt="homepage" class="dark-logo" width="50px" height="50px" /> -->
                         </div>
                         </a> 
@@ -59,7 +57,7 @@
                                 <!-- Logo icon -->
                                 <!-- <img src='{{asset("content/images/logo.png")}}' alt="homepage" class="dark-logo" width="55px" height="55px" /> -->
 
-                                <img src='{{asset("picture/logo/logo.png")}}' class="dark-logo" width="55px" height="55px" />   
+                                <img src="{{asset('content/images/logo.png')}}" class="dark-logo" width="200px" height="50px" />   
                             </div>
                         </a>
                     </li>
@@ -126,6 +124,12 @@
                         </li>
                         <li> <a class="email-compose.html" href="{{asset('paymentmethod')}}"><i class="fa fa-paypal"></i></i>Payment Method</a>
                         </li>
+                        <li> <a class="email-compose.html" href="{{ route('menu_list') }}"><i class="fa fa-list-ul"></i></i>Menu</a>
+                        </li>
+                        <li> <a class="email-compose.html" href="{{ route('help_list') }}"><i class="fa fa-question-circle-o"></i></i>Help Desk</a>
+                        </li>
+                        <li> <a class="email-compose.html" href="{{route('booking_list')}}"><i class="fa fa-handshake-o"></i></i>Booking</a>
+                        </li>
                         
                     </ul>
                 </nav>
@@ -185,10 +189,13 @@
     <!-- Additional Modal -->
 
     <!-- All Jquery -->
-    <script src="content/js/jquery.min.js"></script>
+    <script src="{{asset('content/js/jquery.min.js')}}"></script>
 
     <!-- Bootstrap JS -->
     <script src='{{asset("content/js/bootstrap.js")}}'></script>
+
+    <!-- ck editor JS -->
+    <script src="{{asset('content/ckeditor/ckeditor.js')}}"></script>
 
     <!--Custom JavaScript for progressbar and menu -->
     <script src='{{asset("content/js/scripts.js")}}'></script>
@@ -201,6 +208,9 @@
 
     <script src="{{asset('content/js/adminpanel/adminpanel.js')}}"></script>
 
+    <script>
+        CKEDITOR.replace('content');
+    </script>
 </body>
 
 </html>

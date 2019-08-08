@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Client;
 use Illuminate\Support\Facades\Storage;
+use SoapClient;
 
 class ClientController extends Controller
 {
@@ -93,6 +94,27 @@ class ClientController extends Controller
         return redirect()->back()->withErrors([
             "message" => "Client deleted successfully"
         ]);
+    }
+    
+    public function sendWelcomeMessage()
+    {
+        // dd("Hello");
+        try {
+            $soapClient = new SoapClient("https://api2.onnorokomSMS.com/sendSMS.asmx?wsdl");
+            $paramArray = array(
+                'userName' => "01867301260",
+                'userPassword' => "6371",
+                'mobileNumber' =>"01867301260",
+                'smsText' => "Hello, welcome to Server messaging",
+                'type' => "TEXT",
+                'maskName' => '',
+                'campaignName' => 'Attendence',
+            );
+            $value = $soapClient->__call("OneToOne", array($paramArray));
+            
+        } catch (Exception $e) {
+            echo $e->getMessage();
+        }
     }
     
 }

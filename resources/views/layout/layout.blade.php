@@ -18,6 +18,7 @@
 		<link rel="stylesheet" type="text/css" href="{{asset('content/unicat/styles/responsive.css')}}">
 		<link rel="stylesheet" type="text/css" href="{{asset('content/css/home.css')}}"/>
 		<link rel="stylesheet" type="text/css" href="{{asset('content/css/responsive.css')}}"/>
+		<link rel="stylesheet" type="text/css" href="{{asset('content/css/snackbar.css')}}"/>
 
 	</head>
 
@@ -39,17 +40,38 @@
 							<div class="row">
 								<div class="col">
 									<div class="top_bar_content d-flex flex-row align-items-center justify-content-start">
-										<ul class="top_bar_contact_list">
+										
+										<ul class="top_bar_contact_list" style="display: none;">
 											<img src="{{asset("picture/logo/logo.png")}}" alt="logo">
 											<li class="title_section">
 												<div class="title">{{ $info->title }}</div>
 												<p class="sub-title">{{ $info->moto }}</p>
 											</li>
 										</ul>
+
+										<ul class="top_bar_contact_list">
+											<img src="{{asset('content/images/logo.png')}}" alt="logo">
+										</ul>
+
 										<ul class="top_bar_contact_list ml-auto">
-											<li class="contact-info">
+											<li class="contact-info"  style="margin-right: 30px; padding-right: 0px; border-right: 0px solid #000;">
 												<div style="color: #606060;"><i class="fa fa-phone" style="color: #ff9100;" aria-hidden="true"></i>  {{ $info->phone }}</div>
 												<p style="color: #606060;"><i class="fa fa-envelope-o" style="color: #ff9100;" aria-hidden="true"></i>  {{ $info->email }}</p>
+											</li>
+											<li>
+												<a href="skype:bdlawcentre?call"><img src="{{asset('content/images/skype_outline.png')}}"></a>
+											</li>
+											<li>
+												<a href="tel:8801711993639"><img src="{{asset('content/images/imo_outline.png')}}"></a>
+											</li>
+											<li>
+												<a href="https://wa.me/8801711993639"><img src="{{asset('content/images/whatsapp_outline.png')}}"></a>
+											</li>
+											<li>
+												<a href="viber://chat?number=8801711993639"><img src="{{asset('content/images/viber_outline.png')}}"></a>
+											</li>
+											<li>
+												<a href="https://m.me/BdLawCentre/"><img src="{{asset('content/images/messenger_outline.png')}}"></a>
 											</li>
 											<li class="search_action search_button">
 												<a href="#">
@@ -58,6 +80,7 @@
 												</a>
 											</li>
 										</ul>
+										
 									</div>
 								</div>
 							</div>
@@ -72,25 +95,29 @@
 							<div class="col">
 								<div class="header_content d-flex flex-row align-items-center justify-content-around">
 									<ul class="main_nav">
-										<li class="active"><a href="#">Home</a></li>
+										<li class="active"><a href="/">Home</a></li>
+
+										@foreach($root_menu as $menu)
+											<li class="header_button">
+												<a href="{{ route('menu_details' ,[$menu->id]) }}">{{ $menu->title }}</a>
+												<div class="dropdown_menu">
+													
+													@foreach($menu->child  as $child)
+														<a href="{{ route('menu_details' ,[$child->id]) }}">{{ $child->title }}</a>
+													@endforeach
+												</div>
+											</li>
+										@endforeach
+
+
+										<li><a href="/#practices">Practices</a></li>
 										
-										<li><a href="#practices">Practices</a></li>
+										<li><a href="/#lawers">Lawyers</a></li>
 
-										<li><a href="#lawers">Lawyers</a></li>
+										<li><a href="/#Client">Our Client</a></li>
 
-										<li><a href="#Client">Our Client</a></li>
+										<li><a href="/#trainings">Training</a></li>
 
-										<li><a href="#">Land & Housing</a></li>
-
-										<li><a href="#trainings">Training</a></li>
-
-										<li><a href="#">Major Cases</a></li>
-										
-										<li><a href="#">Social Move</a></li>
-										<li><a href="#">Gallery</a></li>
-										<li><a href="#">News & Events</a></li> 
-										<li><a href="#">FAQ</a></li> 
-										<li><a href="#">Certifications</a></li>
 									</ul>
 
 								</div>
@@ -132,11 +159,7 @@
 								<div class="col">
 									<div class="top_bar_content d-flex flex-row align-items-center justify-content-start">
 										<ul class="mr-auto p-2 top_bar_contact_list">
-											<img src="{{asset("picture/logo/logo.png")}}" alt="logo">
-											<li class="title_section">
-												<div class="title">{{ $info->title }}</div>
-												<p class="sub-title">{{ $info->moto }}</p>
-											</li>
+											<a href="/"><img class="mobile_logo" src="{{asset('content/images/logo.png')}}" alt="logo" width=200></a>
 										</ul>
 
 										<ul class="top_bar_contact_list p-2" style="margin-right: 8px;">
@@ -173,17 +196,25 @@
 				<nav class="menu_nav">
 					<ul class="menu_mm">
 						<li class="menu_mm"><a href="/">Home</a></li>
-						<li class="menu_mm"><a href="#practices">Practices</a></li>
-						<li class="menu_mm"><a href="#lawers">Lawyers</a></li>
-						<li class="menu_mm"><a href="#Client">Our Client</a></li>
-						<li class="menu_mm"><a href="#">Land & Housing</a></li>
-						<li class="menu_mm" ><a href="#trainings">Training</a></li>
-						<li class="menu_mm"><a href="#">Major Cases</a></li>
-						<li class="menu_mm"><a href="#">Social Move</a></li>
-						<li class="menu_mm"><a href="#">Gallery</a></li>
-						<li class="menu_mm"><a href="#">News & Events</a></li> 
-						<li class="menu_mm"><a href="#">FAQ</a></li> 
-						<li class="menu_mm"><a href="#">Certifications</a></li>
+
+						@foreach($root_menu as $menu)
+							<li class="menu_mm">
+								<a href="{{ route('menu_details' ,[$menu->id]) }}">{{ $menu->title }}</a>
+							</li>
+							@foreach($menu->child  as $child)
+								<li class="menu_mm">
+									<a href="{{ route('menu_details' ,[$child->id]) }}">{{ $child->title }}</a>
+								</li>
+							@endforeach
+						@endforeach
+
+						<li class="menu_mm"><a href="/#practices">Practices</a></li>
+						<li class="menu_mm"><a href="/#lawers">Lawyers</a></li>
+						<li class="menu_mm"><a href="/#Client">Our Client</a></li>
+						<li class="menu_mm" ><a href="/#trainings">Training</a></li>
+						<li class="menu_mm">
+							<a href="#">ADR</a>
+						</li>
 					</ul>
 				</nav>
 			</div>
@@ -328,6 +359,23 @@
 			</div>
 		</footer>
 
+		<!-- Snackbar -->
+		@if(count($errors)>0)
+			<div id="snackbar">
+				@if($errors->has('message'))
+				<h4 class="text-success"><i class="fa fa-check-circle"></i> Success </h4>
+				<div class="snackbar_content">{{$errors->first("message")}}</div>
+				@else
+				<h4 class="text-danger"><i class="fa fa-close"></i> Error </h4>
+				<div class="snackbar_content">
+					@foreach($errors->all() as $error)
+						{{$error}} <br>
+					@endforeach
+				</div>
+				@endif 
+			</div>
+		@endif 
+
 		<script src="{{asset('content/unicat/js/jquery-3.2.1.min.js')}}"></script>
 		<script src="{{asset('content/unicat/plugins/scrollmagic/ScrollMagic.min.js')}}"></script>
 		<!-- <script src="{{asset('content/unicat/styles/bootstrap4/bootstrap.min.js')}}"></script> -->
@@ -336,6 +384,6 @@
 		<script src="{{asset('content/js/custom.js')}}"></script>
 		<script src="{{asset('content/js/homepage.js')}}"></script>
 		<script src="{{asset('content/js/bootstrap.min.js')}}"></script>
-
+		<script src="{{asset('content/js/snackbar.js')}}"></script>
 	</body>
 </html>

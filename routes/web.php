@@ -26,8 +26,14 @@ Route::post('/register', function () {
         return redirect("login");
 })->name("register");
 
+Route::post('/helpdesk/ask', 'HelpController@saveHelpInfo')->name("askHelp");
+Route::post('/appoinment/book', 'BookingController@saveBookingInfo')->name("bookAppoinment");
+
+
+Route::get('/testmessage', 'ClientController@sendWelcomeMessage');
 
 Route::get('/', 'HomeController@index');
+
 Route::middleware('auth')->group(function (){
 
     Route::get('/adminpanel',function(){
@@ -116,8 +122,30 @@ Route::middleware('auth')->group(function (){
     Route::post('/updatePaymentmethod', 'PaymentMethodController@updatePaymentmethod')->name("updatePaymentmethod");
 
     Route::get('/home', 'HomeController@index')->name('home');
+    
+
+    Route::get('/helpdesk/list',"HelpController@showList")->name('help_list');
+    Route::get('/helpdesk/remove/{id}',"HelpController@remove")->name("help_remove");
+
+    Route::get('/booking/list',"BookingController@showList")->name('booking_list');
+    Route::get('/booking/remove/{id}',"BookingController@remove")->name("booking_remove");
+
+    Route::get('/menu/list',"MenuController@showList")->name('menu_list');
+
+    Route::get('/menu/add',"MenuController@showNewForm")->name('menu_add');
+    Route::post('/menu/add',"MenuController@add")->name('menu_add');
+    
+    Route::get('/menu/edit/{id}',"MenuController@showEditForm")->name('menu_edit');
+    Route::post('/menu/edit/{id}',"MenuController@edit")->name('menu_edit');
+
+    Route::get('/menu/remove/{id}',"MenuController@remove")->name('menu_remove');
+
+
+    Route::get('/home', 'HomeController@index')->name('home');
 
 });
+
+Route::get('/menu/details/{id}',"MenuController@view")->name('menu_details');
 
 Route::get('/picture/{filetype}/{filename}', function ($filetype, $filename) {
     // Check if file exists in app/storage/file folder
@@ -130,3 +158,4 @@ Route::get('/picture/{filetype}/{filename}', function ($filetype, $filename) {
         ]);
     }
 });
+

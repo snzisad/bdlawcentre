@@ -282,11 +282,26 @@ section
 
 .top_bar img
 {
-	width: 85px;
-	height: 75px;
-	padding-bottom: 10px;
-	margin-bottom: 30px;
+	width: 320px;
+	height: 60px;
+	margin-left: 50px;
 }
+
+.top_bar_contact_list a img
+{
+	width: 30px;
+	height: 30px;
+	margin-left: -15px;    
+	margin-top: -25px;
+}
+
+.top_bar_contact_list .mobile_logo
+{
+	width: 250px;
+	height: 55px;
+	margin-top: 5px;
+}
+
 
 .top_bar .title_section
 {
@@ -352,10 +367,17 @@ section
 {
 	margin-left: 1px;
 }
+
 .top_bar_contact_list li:not(:last-child)
 {
 	margin-right: 21px;
 }
+
+.top_bar_contact_list li:last-child
+{
+	margin-right: 50px;
+}
+
 .top_bar_login
 {
 	height: 100%;
@@ -541,13 +563,31 @@ section
 	content: '';
 }
 
+.main_nav .dropdown_menu{
+	display: none;
+	position: absolute;
+	background: #ff9100;
+	min-width: 150px;
+	box-shadow: 0px 8px 16px 0px rgb(0, 0, 0.2);
+	z-index: -1;
+}
+
+.dropdown_menu a{
+	display: block;
+	padding: 8px;
+}
+
+.header_button:hover .dropdown_menu{
+	display: block;
+}
+
 .main_nav ul{
 	
 }
 
 .search_button
 {
-	margin-left: 46px;
+	margin-left: 0px;
 	cursor: pointer;
 }
 .shopping_cart
@@ -879,7 +919,7 @@ section
 }
 
 .home img{
-	height: 600px;
+	height: 370px;
 }
 .home_slider_container
 {
@@ -2294,4 +2334,17 @@ section
 	background: #fff;
 	padding: 5px;
 	border:1px solid #ddd;
+}
+
+.banner{
+	margin-left: 65px;
+	margin-right: 140px;
+}
+
+.help-section{
+	margin-top: 5px;
+}
+
+.marker{
+	background-color: #FFFF00;
 }

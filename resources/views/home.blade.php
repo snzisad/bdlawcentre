@@ -6,49 +6,84 @@
 	<!-- Image Slide -->
 	<div class="home">
 
-		@if(count($slideimages) > 0)
-		<div id="carouselSlideShowIndicators" class="carousel slide" data-ride="carousel">
-		  <ol class="carousel-indicators">
-		    <li data-target="#carouselSlideShowIndicators" data-slide-to="0" class="active"></li>
-		    @for($i = 1 ; $i< count($slideimages); $i++)
-		    	<li data-target="#carouselSlideShowIndicators" data-slide-to="{{$i}}"></li>
-		    @endfor
-		  </ol>
+		<div class="row banner" >
+			<div class="col-lg-9" style="margin-top: 5px;">
 
-		  <div class="carousel-inner">
-		  	
-		    <div class="carousel-item active">
-		      	<img class="d-block w-100" src="{{asset('picture/banner/'.$slideimages[0]->banner)}}"/>
-		       <div class="carousel-text">
-		      	<p class="title">{{ $slideimages[0]->title }}</p>
-		      	<p class="description">{{ $slideimages[0]->description }}</p>
-		      	<p class="button carousel_button" data-toggle="modal" data-target="#descriptionModalCenter">Learn More</p>
-		      </div>
-		    </div>
+				@if(count($slideimages) > 0)
+				<div id="carouselSlideShowIndicators" class="carousel slide" data-ride="carousel">
+				<ol class="carousel-indicators">
+					<li data-target="#carouselSlideShowIndicators" data-slide-to="0" class="active"></li>
+					@for($i = 1 ; $i< count($slideimages); $i++)
+						<li data-target="#carouselSlideShowIndicators" data-slide-to="{{$i}}"></li>
+					@endfor
+				</ol>
 
-		    @for($i = 1 ; $i< count($slideimages); $i++)
-			    <div class="carousel-item">
-			      <img class="d-block w-100" src="{{asset('picture/banner/'.$slideimages[$i]->banner)}}">
-			       <div class="carousel-text">
-			      	<p class="title">{{ $slideimages[$i]->title }}</p>
-			      	<p class="description">{{ $slideimages[$i]->description }}</p>
-			      	<p class="button carousel_button" data-toggle="modal" data-target="#descriptionModalCenter">Learn More</p>
-			      </div>
-			    </div>
-		    @endfor
+				<div class="carousel-inner">
+					
+					<div class="carousel-item active">
+						<img class="d-block w-100" src="{{asset('picture/banner/'.$slideimages[0]->banner)}}"/>
+					<div class="carousel-text">
+						<p class="title">{{ $slideimages[0]->title }}</p>
+						<p class="description">{{ $slideimages[0]->description }}</p>
+						<p class="button carousel_button" data-toggle="modal" data-target="#descriptionModalCenter">Learn More</p>
+					</div>
+					</div>
 
-		  </div>
+					@for($i = 1 ; $i< count($slideimages); $i++)
+						<div class="carousel-item">
+						<img class="d-block w-100" src="{{asset('picture/banner/'.$slideimages[$i]->banner)}}">
+						<div class="carousel-text">
+							<p class="title">{{ $slideimages[$i]->title }}</p>
+							<p class="description">{{ $slideimages[$i]->description }}</p>
+							<p class="button carousel_button" data-toggle="modal" data-target="#descriptionModalCenter">Learn More</p>
+						</div>
+						</div>
+					@endfor
 
-		  <a class="carousel-control-prev" href="#carouselSlideShowIndicators" role="button" data-slide="prev" style="width: 5%">
-		    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-		    <span class="sr-only">Previous</span>
-		  </a>
-		  <a class="carousel-control-next" href="#carouselSlideShowIndicators" role="button" data-slide="next" style="width: 15%">
-		    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-		    <span class="sr-only">Next</span>
-		  </a>
+				</div>
+
+				<a class="carousel-control-prev" href="#carouselSlideShowIndicators" role="button" data-slide="prev" style="width: 5%">
+					<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+					<span class="sr-only">Previous</span>
+				</a>
+				<a class="carousel-control-next" href="#carouselSlideShowIndicators" role="button" data-slide="next" style="width: 8%">
+					<span class="carousel-control-next-icon" aria-hidden="true"></span>
+					<span class="sr-only">Next</span>
+				</a>
+				</div>
+				@endif
+			</div>
+			<div class="col-lg-3">
+
+				<div class="modal-dialog  modal-dialog-centered modal-sm help-section">
+					<div class="modal-content">
+						<form method="post" action="{{ route('askHelp') }}">
+							{{ csrf_field() }}
+							<div class="modal-header">
+								<h5 class="modal-title">HOW CAN WE HELP YOU?</h5>
+							</div>
+							<div class="modal-body">
+								<div class="form-group">
+									<input type="text" class="form-control" name="user_name" required autofocus placeholder="Name...">
+								</div>
+								<div class="form-group">
+									<input type="email" class="form-control" name="user_email" required autofocus placeholder="Email...">
+								</div>
+								<div class="form-group">
+									<input type="number" class="form-control" name="phone" required autofocus placeholder="Phone...">
+								</div>
+								<div class="form-group">
+									<textarea class="form-control" name="message" placeholder="Message..." required autofocus></textarea>
+								</div>
+								<button type="submit" class="btn btn-outline-secondary">Submit</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+
 		</div>
-		@endif
+
 	</div>
 
 
@@ -734,7 +769,7 @@
 <div class="modal fade book-appoinment-modal" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog  modal-dialog-centered modal-sm">
     <div class="modal-content">
-    	<form class="" action="">
+		<form method="post" action="{{ route('bookAppoinment') }}">
     		{{ csrf_field() }}
 	      	<div class="modal-header">
 		        <h5 class="modal-title">BOOK APPOINMENT</h5>
@@ -743,22 +778,24 @@
 		        </button>
 	      	</div>
 		    <div class="modal-body">
-		    	<div class="form-group">
-		            <input type="text" class="form-control" name="name" required autofocus placeholder="Name...">
-		        </div>
-		    	<div class="form-group">
-		            <input type="email" class="form-control" name="email" required autofocus placeholder="Email...">
-		        </div>
-		    	<div class="form-group">
-		            <input type="number" class="form-control" name="phone" required autofocus placeholder="Phone...">
-		        </div>
-		    	<div class="form-group">
+
+				<div class="form-group">
+					<input type="text" class="form-control" name="user_name" required autofocus placeholder="Name...">
+				</div>
+				<div class="form-group">
+					<input type="email" class="form-control" name="user_email" required autofocus placeholder="Email...">
+				</div>
+				<div class="form-group">
+					<input type="number" class="form-control" name="phone" required autofocus placeholder="Phone...">
+				</div>
+				<div class="form-group">
 		    		<label>Visit Date</label>
-		            <input type="date" class="form-control" name="date" required autofocus placeholder="Visit Date...">
+		            <input type="date" class="form-control" name="visit_date" required autofocus placeholder="Visit Date...">
 		        </div>
-		        <div class="form-group">
-		            <textarea class="form-control" name="message" placeholder="Message..." required autofocus></textarea>
-		        </div>
+				<div class="form-group">
+					<textarea class="form-control" name="message" placeholder="Message..." required autofocus></textarea>
+				</div>
+
 		    </div>
 		    <div class="modal-footer">
 		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
@@ -774,28 +811,31 @@
 <div class="modal fade get-help-modal" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog  modal-dialog-centered modal-sm">
     <div class="modal-content">
-    	<form class="" action="">
-    		{{ csrf_field() }}
+		<form method="post" action="{{ route('askHelp') }}">
+			{{ csrf_field() }}
+
 	      	<div class="modal-header">
 		        <h5 class="modal-title">HOW CAN WE HELP YOU?</h5>
 		        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
 		          <span aria-hidden="true">&times;</span>
 		        </button>
 	      	</div>
+
 		    <div class="modal-body">
-		    	<div class="form-group">
-		            <input type="text" class="form-control" name="name" required autofocus placeholder="Name...">
-		        </div>
-		    	<div class="form-group">
-		            <input type="email" class="form-control" name="email" required autofocus placeholder="Email...">
-		        </div>
-		    	<div class="form-group">
-		            <input type="number" class="form-control" name="phone" required autofocus placeholder="Phone...">
-		        </div>
-		        <div class="form-group">
-		            <textarea class="form-control" name="message" placeholder="Message..." required autofocus></textarea>
-		        </div>
+				<div class="form-group">
+					<input type="text" class="form-control" name="user_name" required autofocus placeholder="Name...">
+				</div>
+				<div class="form-group">
+					<input type="email" class="form-control" name="user_email" required autofocus placeholder="Email...">
+				</div>
+				<div class="form-group">
+					<input type="number" class="form-control" name="phone" required autofocus placeholder="Phone...">
+				</div>
+				<div class="form-group">
+					<textarea class="form-control" name="message" placeholder="Message..." required autofocus></textarea>
+				</div>
 		    </div>
+
 		    <div class="modal-footer">
 		        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 		        <button type="submit" class="btn btn-primary">Submit</button>
